@@ -41,10 +41,11 @@ RUN echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true 
 
 
 RUN git clone https://github.com/OmniLayer/omnicore.git && cd $W_DIR/omnicore && ./autogen.sh && ./configure && make
-#RUN ./autogen.sh
-#RUN ./configure
-#RUN make
+
+RUN mkdir /root/.bitcoin
+
+ADD bitcoin.conf /root/.bitcoin
 
 EXPOSE 18332 
 
-ENTRYPOINT lxterminal
+ENTRYPOINT ["/usr/local/omnicore/src/omnicored"]

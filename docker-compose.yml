@@ -1,0 +1,6 @@
+omnicored:
+  image: jborozdina/omnicored
+  environment: 
+    - DISPLAY=192.168.88.58:0.0
+  ports:
+    - 18332:18332
