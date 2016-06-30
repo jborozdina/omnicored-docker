@@ -31,6 +31,7 @@ RUN apt-get -y install libqt4-dev
 RUN apt-get -y install libprotobuf-dev protobuf-compiler
 RUN apt-get -y install libqrencode-dev
 RUN apt-get install bsdmainutils
+RUN apt-get -y install curl
 
 RUN echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections && \
     apt-get -y -q install \
@@ -46,6 +47,6 @@ RUN mkdir /root/.bitcoin
 
 ADD bitcoin.conf /root/.bitcoin
 
-EXPOSE 18332 
+EXPOSE 18332
 
-ENTRYPOINT ["/usr/local/omnicore/src/omnicored"]
+ENTRYPOINT lxterminal -e /usr/local/omnicore/src/qt/omnicore-qt
