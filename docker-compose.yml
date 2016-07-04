@@ -1,7 +1,7 @@
 omnicored:
-  image: jborozdina/omnicored
+  image: jborozdina/omnicored-docker
   environment: 
-    - DISPLAY=192.168.88.58:0.0
+    - DISPLAY=
   ports:
     - 18332:18332
   restart: always
